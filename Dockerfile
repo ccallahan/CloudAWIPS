@@ -13,7 +13,7 @@ MAINTAINER Michael James <mjames@ucar.edu>
 
 USER root
 
-RUN wget -O /etc/yum.repos.d/awips2.repo https://www.unidata.ucar.edu/software/awips2/doc/el7-dev.repo
+RUN wget -O /etc/yum.repos.d/awips2.repo https://downloads.unidata.ucar.edu/awips2/current/linux/awips2.repo
 RUN yum -y clean all
 RUN groupadd fxalpha && useradd -G fxalpha awips
 RUN yum groupinstall awips2-cave -y
