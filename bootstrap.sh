@@ -108,7 +108,6 @@ export DISPLAY=localhost:1
 cd /home/${CUSER}/noVNC/utils
 openssl req -new -x509 -days 365 -nodes -out self.pem -keyout self.pem -batch >& /dev/null
 cd ~
-/home/${CUSER}/noVNC/utils/launch.sh ${SSLOP} --vnc 127.0.0.1:5901 >& /dev/null &
 
 printf "\n\n=====================================================================\n"
 cat VERSION.md
@@ -119,8 +118,7 @@ if [ -f /home/${CUSER}/start.sh ]; then
 fi
 
 echo "Session Running at http://localhost:6080"
-echo ""
-echo "Press [Return] to exit."
-echo ""
 
-read
+/home/${CUSER}/noVNC/utils/launch.sh ${SSLOP} --vnc 127.0.0.1:5901 >& /dev/null
+
+
